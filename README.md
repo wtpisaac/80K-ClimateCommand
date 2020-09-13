@@ -3,6 +3,8 @@ This game was designed and developed as part of my CMPM 80K course at UCSC.
 It is designed to be a clone of Missile Command with themes of climate change,
 and uses the Godot Engine for 2D gameplay.
 
+Language used was GDScript for the programming, Godot's Python-like language.
+
 Art and assets created by Cody Cochlin, all programming work done by me (Isaac
 Trimble-Pederson)
 
