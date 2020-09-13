@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Res/Final/airplanes.png" type="Texture" id=1]
+[ext_resource path="res://Objects/LeavingPlane.gd" type="Script" id=2]
+
+[node name="LeavingPlane" type="Sprite"]
+texture = ExtResource( 1 )
+script = ExtResource( 2 )

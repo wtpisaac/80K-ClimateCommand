@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Res/Font/Oxanium-Regular.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = ExtResource( 1 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="YearLabel" type="RichTextLabel" parent="."]
+margin_top = 56.0
+margin_right = 1024.0
+margin_bottom = 128.0
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Year 1[/center]"
+text = "Year 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PollutionLabel" type="RichTextLabel" parent="."]
+margin_top = 128.0
+margin_right = 1024.0
+margin_bottom = 200.0
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center]Pollution 30%[/center]"
+text = "Pollution 30%"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LuckLabel" type="RichTextLabel" parent="."]
+margin_left = 240.0
+margin_top = 384.0
+margin_right = 752.0
+margin_bottom = 456.0
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center]Good Luck[/center]"
+text = "Good Luck"
+__meta__ = {
+"_edit_use_anchors_": false
+}

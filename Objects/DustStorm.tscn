@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Res/Final/Tornado frames.png" type="Texture" id=1]
+[ext_resource path="res://Objects/DustStorm.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 52, 43 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 52, 0, 52, 43 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 18.7358, 22.3836 )
+
+[node name="DustStorm" type="AnimatedSprite"]
+frames = SubResource( 4 )
+frame = 1
+playing = true
+offset = Vector2( 0, -5 )
+script = ExtResource( 2 )
+precs = 4.0
+gravity = 10.0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( -3.08089, -3.96115 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_Area2D_area_shape_entered"]
+[connection signal="area_shape_exited" from="Area2D" to="." method="_on_Area2D_area_shape_exited"]

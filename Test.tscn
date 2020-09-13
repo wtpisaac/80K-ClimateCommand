@@ -1,0 +1,112 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Objects/Airport.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Test.gd" type="Script" id=2]
+[ext_resource path="res://Res/Final/clear sky.png" type="Texture" id=3]
+[ext_resource path="res://Objects/LevelAnnounce.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Farm.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Res/Font/Oxanium-Regular.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 246.5, 11.6805 )
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 8.47223
+height = 52.3837
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 16.9444
+height = 73.9549
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 12.7083
+height = 51.6146
+
+[sub_resource type="DynamicFont" id=5]
+size = 48
+font_data = ExtResource( 7 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sky" type="Sprite" parent="."]
+position = Vector2( 512, 288 )
+scale = Vector2( 2.07708, 1.88852 )
+z_index = -1
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 2048, 1152 )
+
+[node name="Area2D" type="Area2D" parent="Sky"]
+position = Vector2( 0, 143 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sky/Area2D"]
+shape = SubResource( 1 )
+
+[node name="Area2D2" type="Area2D" parent="Sky"]
+position = Vector2( -211.836, 122.847 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sky/Area2D2"]
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="Area2D3" type="Area2D" parent="Sky"]
+position = Vector2( -7.70313, 122.847 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sky/Area2D3"]
+rotation = 1.5708
+shape = SubResource( 3 )
+
+[node name="Area2D4" type="Area2D" parent="Sky"]
+position = Vector2( 207.984, 122.847 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sky/Area2D4"]
+rotation = 1.5708
+shape = SubResource( 4 )
+
+[node name="Farm1" parent="." instance=ExtResource( 5 )]
+position = Vector2( 168, 528 )
+
+[node name="Farm2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 248, 528 )
+
+[node name="Farm3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 328, 528 )
+
+[node name="Farm4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 640, 528 )
+
+[node name="Farm5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 736, 528 )
+
+[node name="Farm6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 832, 528 )
+
+[node name="AirportL" parent="." instance=ExtResource( 1 )]
+position = Vector2( 72, 472 )
+
+[node name="AirportC" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512, 464 )
+
+[node name="AirportR" parent="." instance=ExtResource( 1 )]
+position = Vector2( 960, 464 )
+
+[node name="ScoreLabel" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 8.0
+margin_right = 1024.0
+margin_bottom = 64.0
+custom_fonts/normal_font = SubResource( 5 )
+bbcode_enabled = true
+bbcode_text = "[right]0[/right]"
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LAnnounce" parent="." instance=ExtResource( 4 )]

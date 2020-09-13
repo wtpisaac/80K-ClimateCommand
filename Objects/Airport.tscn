@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Res/Final/airport.png" type="Texture" id=1]
+[ext_resource path="res://Objects/Airport.gd" type="Script" id=2]
+[ext_resource path="res://Res/Final/icon.png" type="Texture" id=3]
+[ext_resource path="res://Res/Font/Oxanium-Regular.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 4 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 31.8504, 35.3108 )
+
+[node name="Airport" type="Sprite"]
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+cooldown_secs = 0.25
+
+[node name="Label" type="Label" parent="."]
+margin_left = -11.647
+margin_top = 42.1485
+margin_right = 28.353
+margin_bottom = 63.1485
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "10"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BaseArea" type="Area2D" parent="."]
+position = Vector2( 8.35299, 9.14852 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseArea"]
+shape = SubResource( 2 )
+
+[node name="Icon" type="Sprite" parent="."]
+position = Vector2( -14.2174, 51.3012 )
+scale = Vector2( 0.45, 0.45 )
+texture = ExtResource( 3 )
+[connection signal="area_shape_entered" from="BaseArea" to="." method="_on_area_shape_entered"]

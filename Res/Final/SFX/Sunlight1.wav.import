@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Sunlight1.wav-e533c0522e6fb38c96e6110d6d3723ba.sample"
+
+[deps]
+
+source_file="res://Res/Final/SFX/Sunlight1.wav"
+dest_files=[ "res://.import/Sunlight1.wav-e533c0522e6fb38c96e6110d6d3723ba.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
